@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Futebol da Vila - histórias, esportes e grandes atletas."
+    >
+
+    <title>Futebol da Vila | Universo dos Esportes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <a href="#inicio" class="logo">
+            FUTEBOL <span>DA VILA</span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#esportes">Esportes</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTEÚDO -->
+
+    <main id="inicio">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="subtitle">
+                    BEM-VINDO AO FUTEBOL DA VILA
+                </p>
+
+                <h1>
+                    Viva a emoção
+                    <span>do esporte.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Descubra histórias, desafios e craques que fazem
+                    do esporte uma das maiores paixões do mundo.
+                </p>
+
+                <div class="hero-botoes">
+
+                    <button id="botao" type="button">
+                        Explorar esportes
+                    </button>
+
+                    <button
+                        id="botaoSorteio"
+                        class="secundario"
+                        type="button"
+                    >
+                        🎲 Sortear um craque
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD A BOLA ROLA -->
+
+            <div class="hero-card">
+
+                <div class="bola-fundo"></div>
+
+                <div class="bola-conteudo">
+
+                    <span class="bola-tag">
+                        ⚽ MOMENTO ESPORTIVO
+                    </span>
+
+                    <div class="bola-icon">
+                        ⚽
+                    </div>
+
+                    <h2>
+                        A BOLA
+                        <span>ROLA</span>
+                    </h2>
+
+                    <p>
+                        Onde existe paixão, existe esporte.
+                        Entre em campo, conheça grandes atletas
+                        e descubra histórias que marcaram gerações.
+                    </p>
+
+                    <div class="bola-info">
+
+                        <div>
+                            <strong>04</strong>
+                            <small>ESPORTES</small>
+                        </div>
+
+                        <div>
+                            <strong>32</strong>
+                            <small>CRAQUES</small>
+                        </div>
+
+                        <div>
+                            <strong>01</strong>
+                            <small>PAIXÃO</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESPORTES -->
+
+        <section class="sports" id="esportes">
+
+            <div class="section-title">
+
+                <p>EXPLORE</p>
+
+                <h2>
+                    Principais esportes
+                </h2>
+
+                <span>
+                    Escolha um esporte e conheça grandes atletas da história.
+                </span>
+
+            </div>
+
+
+            <div class="sports-grid">
+
+                <!-- FUTEBOL -->
+
+                <article
+                    class="sport-card"
+                    data-esporte="futebol"
+                >
+
+                    <div class="sport-icon">
+                        ⚽
+                    </div>
+
+                    <h3>
+                        Futebol
+                    </h3>
+
+                    <p>
+                        Paixão, estratégia e emoção dentro das quatro linhas.
+                    </p>
+
+                    <button class="btn-info" type="button">
+                        Ver informações →
+                    </button>
+
+                </article>
+
+
+                <!-- BASQUETE -->
+
+                <article
+                    class="sport-card"
+                    data-esporte="basquete"
+                >
+
+                    <div class="sport-icon">
+                        🏀
+                    </div>
+
+                    <h3>
+                        Basquete
+                    </h3>
+
+                    <p>
+                        Velocidade, precisão e decisões em poucos segundos.
+                    </p>
+
+                    <button class="btn-info" type="button">
+                        Ver informações →
+                    </button>
+
+                </article>
+
+
+                <!-- F1 -->
+
+                <article
+                    class="sport-card"
+                    data-esporte="formula1"
+                >
+
+                    <div class="sport-icon">
+                        🏎️
+                    </div>
+
+                    <h3>
+                        Fórmula 1
+                    </h3>
+
+                    <p>
+                        Alta velocidade, tecnologia e busca pela vitória.
+                    </p>
+
+                    <button class="btn-info" type="button">
+                        Ver informações →
+                    </button>
+
+                </article>
+
+
+                <!-- VÔLEI -->
+
+                <article
+                    class="sport-card"
+                    data-esporte="volei"
+                >
+
+                    <div class="sport-icon">
+                        🏐
+                    </div>
+
+                    <h3>
+                        Vôlei
+                    </h3>
+
+                    <p>
+                        Trabalho em equipe, técnica e muita intensidade.
+                    </p>
+
+                    <button class="btn-info" type="button">
+                        Ver informações →
+                    </button>
+
+                </article>
+
+            </div>
+
+
+            <div id="informacoes"></div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+
+        <section class="about" id="sobre">
+
+            <div>
+
+                <p class="subtitle">
+                    NOSSA IDEIA
+                </p>
+
+                <h2>
+                    Mais do que competição.
+                    <span>É superação.</span>
+                </h2>
+
+            </div>
+
+            <p>
+                O esporte representa dedicação, disciplina,
+                trabalho em equipe e superação. Cada partida,
+                corrida e competição contam uma história diferente.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            © 2026 Futebol da Vila
+        </p>
+
+        <p>
+            Desenvolvido com HTML, CSS e JavaScript
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

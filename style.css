@@ -1,0 +1,1373 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+
+:root {
+    --laranja: #ff6b00;
+    --laranja-claro: #ff8500;
+    --preto: #080808;
+    --preto-2: #101010;
+    --preto-3: #171717;
+    --cinza: #a5a5a5;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(8, 8, 8, 0.88);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    z-index: 1000;
+
+    transition: 0.3s;
+}
+
+
+header.header-scroll {
+    background: rgba(8, 8, 8, 0.98);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+.logo {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 20px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    color: var(--laranja);
+}
+
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    color: var(--laranja);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 140px 7% 80px;
+
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    overflow: hidden;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.subtitle {
+    color: var(--laranja);
+
+    font-size: 12px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+
+.hero h1 {
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+}
+
+
+.hero h1 span {
+    color: var(--laranja);
+}
+
+
+.hero-description {
+    max-width: 600px;
+
+    color: var(--cinza);
+
+    font-size: 18px;
+
+    margin-top: 28px;
+}
+
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+#botao,
+#botaoSorteio {
+    padding: 15px 24px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+
+#botao {
+    background: var(--laranja);
+    color: #ffffff;
+
+    border: none;
+}
+
+
+#botao:hover {
+    background: var(--laranja-claro);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(255, 107, 0, 0.25);
+}
+
+
+#botaoSorteio {
+    background: transparent;
+    color: #ffffff;
+
+    border: 1px solid #333333;
+}
+
+
+#botaoSorteio:hover {
+    border-color: var(--laranja);
+    color: var(--laranja);
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   A BOLA ROLA
+===================================================== */
+
+.hero-card {
+    position: relative;
+
+    min-height: 510px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255, 107, 0, 0.24),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #1b1b1b,
+            #0c0c0c
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+
+.bola-fundo {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 107, 0, 0.35);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -60%);
+}
+
+
+.bola-fundo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    border: 1px dashed rgba(255, 107, 0, 0.25);
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.bola-conteudo {
+    position: relative;
+
+    min-height: 510px;
+
+    padding: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+}
+
+
+.bola-tag {
+    position: absolute;
+
+    top: 35px;
+    left: 40px;
+
+    color: var(--laranja);
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.bola-icon {
+    position: absolute;
+
+    top: 75px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 85px;
+
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+}
+
+
+.bola-conteudo h2 {
+    font-size: 52px;
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+
+.bola-conteudo h2 span {
+    color: var(--laranja);
+}
+
+
+.bola-conteudo > p {
+    color: var(--cinza);
+
+    font-size: 14px;
+
+    max-width: 440px;
+}
+
+
+.bola-info {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.bola-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bola-info strong {
+    font-size: 24px;
+}
+
+
+.bola-info small {
+    color: #777777;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   ESPORTES
+===================================================== */
+
+.sports {
+    padding: 110px 7%;
+
+    background: #0b0b0b;
+}
+
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+
+.section-title p {
+    color: var(--laranja);
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.section-title h2 {
+    font-size: clamp(35px, 5vw, 55px);
+
+    margin: 8px 0;
+}
+
+
+.section-title span {
+    color: var(--cinza);
+}
+
+
+/* =====================================================
+   CARDS DOS ESPORTES
+===================================================== */
+
+.sports-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.sport-card {
+    padding: 30px;
+
+    min-height: 310px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #121212;
+
+    border: 1px solid #222222;
+
+    border-radius: 15px;
+
+    transition: 0.35s;
+}
+
+
+.sport-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(255, 107, 0, 0.5);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+.sport-icon {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 107, 0, 0.1);
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+.sport-card h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.sport-card p {
+    color: var(--cinza);
+
+    font-size: 14px;
+
+    margin-bottom: auto;
+}
+
+
+.btn-info {
+    margin-top: 25px;
+
+    padding: 10px 0;
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--laranja);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn-info:hover {
+    transform: translateX(5px);
+}
+
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+#informacoes {
+    margin-top: 60px;
+}
+
+
+.info-box {
+    position: relative;
+
+    background: #111111;
+
+    border: 1px solid #252525;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    animation: aparecer 0.4s ease;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fechar-info {
+    position: absolute;
+
+    right: 20px;
+    top: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 1px solid #333333;
+
+    background: #171717;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    transition: 0.3s;
+}
+
+
+.fechar-info:hover {
+    background: var(--laranja);
+    border-color: var(--laranja);
+}
+
+
+.info-cabecalho {
+    max-width: 750px;
+
+    margin-bottom: 35px;
+}
+
+
+.info-cabecalho > span {
+    color: var(--laranja);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.info-cabecalho h2 {
+    font-size: 38px;
+
+    margin: 8px 0;
+}
+
+
+.info-cabecalho p {
+    color: var(--cinza);
+}
+
+
+/* =====================================================
+   CARDS DOS ATLETAS
+===================================================== */
+
+/*
+   VOLTAMOS AO TAMANHO ANTIGO:
+   - 4 cards por linha
+   - foto compacta
+   - formato praticamente quadrado
+*/
+
+.atletas-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.atleta-card {
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #181818;
+
+    border: 1px solid #272727;
+
+    transition: 0.3s;
+}
+
+
+.atleta-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(255, 107, 0, 0.5);
+}
+
+
+/* FOTO */
+
+.atleta-imagem-container {
+    position: relative;
+
+    width: 100%;
+
+    /*
+       FOTO MENOR COMO NO MODELO ANTIGO
+    */
+    aspect-ratio: 1 / 1;
+
+    background: #0a0a0a;
+
+    overflow: hidden;
+}
+
+
+.atleta-imagem {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+.atleta-card:hover .atleta-imagem {
+    transform: scale(1.05);
+}
+
+
+/* NÚMERO */
+
+.atleta-numero {
+    position: absolute;
+
+    right: 10px;
+    top: 10px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--laranja);
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* CONTEÚDO */
+
+.atleta-conteudo {
+    padding: 18px;
+}
+
+
+.atleta-pais {
+    color: var(--laranja);
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.atleta-conteudo h3 {
+    font-size: 18px;
+
+    line-height: 1.2;
+
+    margin: 5px 0;
+}
+
+
+.atleta-conteudo p {
+    color: #777777;
+
+    font-size: 12px;
+}
+
+
+.btn-atleta {
+    margin-top: 12px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn-atleta:hover {
+    color: var(--laranja);
+
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   PERFIL DO ATLETA
+===================================================== */
+
+.perfil-atleta {
+    padding: 35px;
+}
+
+
+.perfil-atleta-grid {
+    display: grid;
+
+    grid-template-columns:
+        330px 1fr;
+
+    gap: 40px;
+
+    align-items: start;
+}
+
+
+.perfil-imagem-container {
+    width: 100%;
+
+    aspect-ratio: 1 / 1.15;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #080808;
+}
+
+
+.perfil-imagem {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.perfil-conteudo {
+    padding-top: 10px;
+}
+
+
+.perfil-tag {
+    color: var(--laranja);
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.perfil-conteudo h2 {
+    font-size: clamp(40px, 5vw, 65px);
+
+    line-height: 1;
+
+    margin: 10px 0;
+}
+
+
+.perfil-pais {
+    color: #999999;
+
+    margin-bottom: 25px;
+}
+
+
+.dados-atleta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+
+.detalhe-box {
+    padding: 16px;
+
+    background: #181818;
+
+    border: 1px solid #292929;
+
+    border-radius: 10px;
+}
+
+
+.detalhe-box span {
+    display: block;
+
+    color: #777777;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+
+.detalhe-box strong {
+    font-size: 13px;
+}
+
+
+.biografia h3 {
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+.texto-biografia {
+    color: #b3b3b3;
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+
+.perfil-detalhes {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-left: 3px solid var(--laranja);
+
+    background: #171717;
+}
+
+
+.perfil-detalhes span {
+    color: var(--laranja);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+
+.perfil-detalhes p {
+    color: #bbbbbb;
+
+    margin-top: 7px;
+}
+
+
+.btn-voltar {
+    margin-top: 25px;
+
+    padding: 12px 18px;
+
+    background: var(--laranja);
+
+    border: none;
+
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn-voltar:hover {
+    background: var(--laranja-claro);
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SORTEIO
+===================================================== */
+
+.sorteio-box {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        300px 1fr;
+
+    gap: 35px;
+
+    background: #111111;
+
+    border: 1px solid #252525;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    animation: aparecer 0.4s ease;
+}
+
+
+.sorteio-imagem {
+    width: 100%;
+
+    aspect-ratio: 1 / 1.1;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background: #080808;
+}
+
+
+.sorteio-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.sorteio-conteudo {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.sorteio-tag {
+    color: var(--laranja);
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.sorteio-conteudo h2 {
+    font-size: 50px;
+
+    line-height: 1;
+
+    margin: 12px 0;
+}
+
+
+.sorteio-texto {
+    color: var(--laranja);
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+
+.sorteio-conteudo > p:not(.sorteio-texto) {
+    color: #aaaaaa;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+.about {
+    padding: 100px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    border-top: 1px solid #151515;
+}
+
+
+.about h2 {
+    font-size: clamp(35px, 5vw, 60px);
+
+    line-height: 1;
+}
+
+
+.about h2 span {
+    color: var(--laranja);
+}
+
+
+.about > p {
+    color: #999999;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 30px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #050505;
+
+    border-top: 1px solid #161616;
+}
+
+
+footer p {
+    color: #666666;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero-card {
+        max-width: 700px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+
+    .sports-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .atletas-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .perfil-atleta-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .perfil-imagem-container {
+        max-width: 400px;
+
+        margin: auto;
+    }
+
+
+    .sorteio-box {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sorteio-imagem {
+        max-width: 350px;
+
+        margin: auto;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+
+    nav {
+        gap: 18px;
+    }
+
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .sports {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .about {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .atletas-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .info-box {
+        padding: 25px 18px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    header {
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 12px 5%;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .hero {
+        padding-top: 145px;
+    }
+
+
+    .hero h1 {
+        font-size: 47px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .hero-botoes {
+        flex-direction: column;
+    }
+
+
+    #botao,
+    #botaoSorteio {
+        width: 100%;
+    }
+
+
+    .sports-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .atletas-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+
+    .atleta-conteudo {
+        padding: 13px;
+    }
+
+
+    .atleta-conteudo h3 {
+        font-size: 16px;
+    }
+
+
+    .atleta-conteudo p {
+        font-size: 11px;
+    }
+
+
+    .btn-atleta {
+        font-size: 10px;
+    }
+
+
+    .dados-atleta {
+        grid-template-columns: 1fr;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 350px) {
+
+    .atletas-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
